@@ -1,0 +1,38 @@
+.question {
+  &__list {
+    margin-bottom: 56px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 104px;
+    }
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 156px;
+    }
+    .active {
+      .question {
+        &__text {
+          display: block;
+        }
+        &__title__icon {
+          width: 40px;
+          height: 24px;
+          display: block;
+        }
+      }
+    }
+  }
+  &__item{
+    cursor: pointer;
+  }
+  &__title {
+    padding: 16px 38px;
+    border-bottom: 1px solid #000;
+    @include media-breakpoint-up(md){
+      padding:22px;
+    }
+    &__icon {
+      width: 40px;
+      height: 26px;
+      display: block;
+    }
+  }
+}

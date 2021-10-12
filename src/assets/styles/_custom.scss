@@ -1,0 +1,289 @@
+
+.top {
+  position: fixed;
+  right: 4vw;
+  @media (min-width: 768px){
+    right: 10vw;
+  }
+  z-index: 1021;
+  &__scroll{
+    bottom: 20vh;
+  }
+  &__shoppingCart {
+    top: 20vh;
+  }
+}
+
+.banner {
+  &__img {
+    width: 100%;
+    height: 550px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 0 0 0 10px ;
+  }
+  &__title {
+    height: 400px;
+  }
+  &__home {
+    position: relative;
+    background-image: 
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7) 30%, transparent 60%), url("https://i.imgur.com/xHee5dO.jpg");
+    background-size: 100% 100%, cover;
+    background-position: center center, center center;
+  }
+}
+
+.inner {
+  // 維修案例縮圖
+  &__repairCase {
+    position: relative;
+    &__text{
+      position: absolute;
+      writing-mode: vertical-lr;
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-100px);
+      left: 0;
+      right: 0;
+      z-index: 9;
+    }
+    &__status{
+      position: absolute;
+      &::before{
+        content:'';
+        position: absolute;
+        top: 22%;
+        right: 10%;
+        width: 25px;
+        height: 25px;
+        background-color: #fff;
+        border-radius: 50%;
+        z-index: -1;
+      }
+      top: 0;
+      right: 5%;
+      z-index: 9;
+    }
+  }
+  &__repairImg {
+    width: 100%;
+    height: 250px;
+    @media (min-width: 768px){
+      height: 200px;
+    }
+  }
+  // 商品清單縮圖
+  &__productListImg {
+    width: 100%;
+    object-position:top center;
+    height: 350px;
+    @media (min-width: 768px) {
+      object-position:center center;
+      height: 285px;
+    }
+  }
+  // 商品內頁大圖
+  &__producImg {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    @media (min-width: 768px) {
+      height: 540px;
+    }
+  }
+  // 商品內頁縮圖
+  &__iconImg {
+    width: 100%;
+    height: 75px;
+    cursor: pointer;
+    object-fit: contain;
+    @media (min-width: 768px) {
+      height: 150px;
+    }
+  }
+  // 購物車縮圖
+  &__cartImg {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+  }
+  &__aboutImg {
+    width: 100%;
+    height: 360px;
+  }
+}
+
+.icon {
+  &__FB {
+    color:#3b5998;
+  }
+  &__LINE {
+    color:#009f4d;
+  }
+  &__grade {
+    color:#FFD306;
+  }
+  &__cartNum {
+    position: absolute;
+    font-size: 8px;
+    top: 10px;
+    right: 15px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    line-height: 15px;
+    background-color: map-get($theme-colors, danger);
+  }
+  &__person {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.custom{
+  &__nav {
+    &--hover {
+      position: relative;
+      &:hover {
+        &::before {
+          position: absolute;
+          content:'';
+          bottom: 0;
+          right: 10px;
+          left: 10px;
+          height: 2px;
+          background-color:map-get($theme-colors, secondary);
+        }
+      }
+    }
+    .active {
+      position: relative;
+      &::before {
+        position: absolute;
+        content:'';
+        bottom: 0;
+        right: 0px;
+        left: 0px;
+        @media (min-width: 996px){
+          right: 10px;
+          left: 10px;
+        }
+        height: 2px;
+        background-color:map-get($theme-colors, secondary);
+      }
+    }
+  }
+  &__category {
+    &--top {
+      top: 58px;
+    }
+    .active {
+      color: #fff;
+    }
+  }
+}
+.promise{
+  background: url(https://i.imgur.com/aCW9dub.png) 50% no-repeat;
+  background-size: cover;
+  width: 100%;
+  background-attachment: fixed;
+  &-top{
+    background: rgba(100,100,100,.35);
+      margin: 0 auto;
+      font-weight: 700;
+      width: 100%;
+      height: 100%;
+      max-height: 190px;
+      padding: 40px 0;
+      
+      h4{
+        font-size: 40px;
+        font-weight: 700;
+      }
+      
+      span{
+        padding: 3px 25px;
+        border-radius: 24px;
+        font-size: 1rem;
+      }
+  }
+}
+.promise-content{
+  background: hsla(0,0%,100%,.9);
+
+  .promise-content-icon{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    @media (min-width: 768px) {
+      width: 100px;
+      height: 100px;
+    }
+    img{
+      width: 40px;
+      @media (min-width: 768px) {
+        width: 50px;
+      }
+    }
+  }
+  li{
+    max-width: 80%;
+    @media (min-width: 768px) {
+      max-width: 30%;
+
+    }
+  }
+}
+.promise-content-title{
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+
+
+.email-section {
+  background: url(https://i.imgur.com/oGAdBAW.jpg) 50% no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 266px;
+  width: 100%;
+  @media (min-width: 768px) {
+    .farm-idea .bg-img {
+      height: 422px;
+    }
+  }
+
+  .email-title {
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  .email-content {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background: hsla(0, 0%, 100%, .6);
+    padding: 30px;
+    font-weight: 700;
+  }
+
+  input {
+    flex: 1 auto;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border: 1px solid black;
+    padding-left: 24px;
+
+  }
+
+  button {
+    padding: 12px;
+    flex: 0 auto;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+}
