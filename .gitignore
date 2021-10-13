@@ -22,4 +22,3 @@ pnpm-debug.log*
 *.sw?
 vue.config.js
 deploy.sh
-README.md

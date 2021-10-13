@@ -9,7 +9,7 @@
               <h2 class="font-weight-bold h1 mb-3 text-white" data-aos="fade-down" data-aos-delay="300">炙燒食堂</h2>
               <h4 class="d-flex flex-column flex-md-row mb-3">
                 <span class="d-flex align-items-center text-white" data-aos="fade-up" data-aos-delay="600">
-                  <span class="material-icons ">arrow_right</span>美味的火烤
+                  <span class="material-icons">arrow_right</span>美味的火烤
                 </span>
                 <span class="d-flex align-items-center text-white" data-aos="fade-up" data-aos-delay="900">
                   <span class="material-icons">arrow_right</span>均衡的營養
@@ -25,7 +25,7 @@
       </div>
     </section>
     <!-- 服務 -->
-      <section class="promise">
+    <section class="promise" data-aos="zoom-in" data-aos-duration="1000">
       <div
         class="promise-top d-flex flex-column align-items-center justify-content-center"
       >
@@ -36,22 +36,22 @@
         <ul
           class="text-white d-flex flex-column flex-md-row align-items-center align-items-center justify-content-around pl-0"
         >
-          <li class="d-flex flex-column align-items-center">
+          <li class="d-flex flex-column align-items-center" data-aos="fade-up" data-aos-delay="300">
             <span
               class="promise-content-icon bg-primary d-flex align-items-center justify-content-center"
             >
-              <img src="../../assets/image/bg-img/icon-1.svg" alt="icon" />
+              <img src="@/assets/image/bg-img/icon-1.svg" alt="icon" />
             </span>
             <h5 class="text-primary my-3 promise-content-title">保證新鮮</h5>
             <p class="text-dark text-center">
               每份餐點都是當日限量，配上專業的冷凍物流，讓您吃到當日最新鮮的食物，消費者吃得安心是對我們最大的鼓勵。
             </p>
           </li>
-          <li class="d-flex flex-column align-items-center">
+          <li class="d-flex flex-column align-items-center" data-aos="fade-up" data-aos-delay="300">
             <span
               class="promise-content-icon bg-primary d-flex align-items-center justify-content-center"
             >
-              <img src="../../assets/image/bg-img/icon-2.svg" alt="icon" />
+              <img src="@/assets/image/bg-img/icon-2.svg" alt="icon" />
             </span>
             <h5 class="text-primary my-3 promise-content-title">價格實惠</h5>
             <p class="text-dark text-center">
@@ -60,11 +60,11 @@
               我們每道料理以最實惠的價格進行販售，讓前來的客人們都能感受到滿滿的飽足感與幸福感。
             </p>
           </li>
-          <li class="d-flex flex-column align-items-center">
+          <li class="d-flex flex-column align-items-center" data-aos="fade-up" data-aos-delay="300">
             <span
               class="promise-content-icon bg-primary d-flex align-items-center justify-content-center"
             >
-              <img src="../../assets/image/bg-img/icon-3.svg" alt="icon" />
+              <img src="@/assets/image/bg-img/icon-3.svg" alt="icon" />
             </span>
             <h5 class="text-primary my-3 promise-content-title">營養滿分</h5>
             <p class="text-dark">

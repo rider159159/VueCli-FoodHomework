@@ -2,7 +2,7 @@
   <aside>
     <button
         type="button"
-        class="top top__shoppingCart btn bg-white rounded-circle text-secondary d-flex p-2"
+        class="top top__shoppingCart btn bg-white rounded-circle text-secondary d-flex p-1"
         data-toggle="modal"
         data-target="#shoppingModal"
       >
