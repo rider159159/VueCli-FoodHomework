@@ -2,11 +2,11 @@
   <aside>
     <button
         type="button"
-        class="top top__shoppingCart btn btn-secondary btn-lg text-decoration-none d-flex p-2"
+        class="top top__shoppingCart btn bg-white rounded-circle text-secondary d-flex p-2"
         data-toggle="modal"
         data-target="#shoppingModal"
       >
-      <span class="material-icons text-white">shopping_cart</span>
+      <span class="material-icons text-secondary btn-icon">shopping_cart</span>
       <span class="icon__cartNum text-white">{{ shopping.data.length }}</span>
     </button>
     <!-- shopping Modal -->

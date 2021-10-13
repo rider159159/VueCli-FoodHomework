@@ -1,5 +1,5 @@
 <template>
-  <button type="button" class="top top__scroll btn btn-secondary rounded-circle btn-lg d-flex p-2 text-white" @click.prevent="scrollToTop(0)" v-if="isShowOfTop">
+  <button type="button" class="top top__scroll btn rounded-circle d-flex p-1 text-secondary bg-white" @click.prevent="scrollToTop(0)" v-if="isShowOfTop">
     <span class="material-icons">arrow_upward</span>
   </button>
 </template>

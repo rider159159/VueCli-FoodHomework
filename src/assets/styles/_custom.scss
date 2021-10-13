@@ -7,10 +7,15 @@
   }
   z-index: 1021;
   &__scroll{
-    bottom: 20vh;
+    bottom: 10vh;
+    box-shadow: 1px 1px 5px #BC8F8F;
   }
   &__shoppingCart {
-    top: 20vh;
+    bottom: 18vh;
+    box-shadow: 1px 1px 5px #BC8F8F;
+    .btn-icon{
+      font-size:36px;
+    }
   }
 }
 
@@ -24,7 +29,7 @@
     border-radius: 0 0 0 10px ;
   }
   &__title {
-    height: 400px;
+    height: 500px;
   }
   &__home {
     position: relative;
@@ -286,4 +291,15 @@
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
   }
+}
+
+.about-title::before{
+  
+  content: "";
+  position: absolute;
+  top: -20px;
+  width: 160px;
+  height: 10px;
+  border-top: 3px solid #e6b800;
+  border-bottom: 3px solid #e6b800;
 }

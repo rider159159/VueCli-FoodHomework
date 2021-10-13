@@ -6,15 +6,15 @@
         <div class="container banner__title">
           <div class="row h-100 d-flex align-items-center">
             <div class="col">
-              <h2 class="font-weight-bold h1 mb-3" data-aos="fade-down" data-aos-delay="300">炙燒食堂</h2>
+              <h2 class="font-weight-bold h1 mb-3 text-white" data-aos="fade-down" data-aos-delay="300">炙燒食堂</h2>
               <h4 class="d-flex flex-column flex-md-row mb-3">
-                <span class="d-flex align-items-center" data-aos="fade-up" data-aos-delay="600">
-                  <span class="material-icons">arrow_right</span>美味的火烤
+                <span class="d-flex align-items-center text-white" data-aos="fade-up" data-aos-delay="600">
+                  <span class="material-icons ">arrow_right</span>美味的火烤
                 </span>
-                <span class="d-flex align-items-center" data-aos="fade-up" data-aos-delay="900">
+                <span class="d-flex align-items-center text-white" data-aos="fade-up" data-aos-delay="900">
                   <span class="material-icons">arrow_right</span>均衡的營養
                 </span>
-                <span class="d-flex align-items-center" data-aos="fade-up" data-aos-delay="1200">
+                <span class="d-flex align-items-center text-white" data-aos="fade-up" data-aos-delay="1200">
                   <span class="material-icons">arrow_right</span>獻給總想大口吃肉的你
                 </span>
               </h4>

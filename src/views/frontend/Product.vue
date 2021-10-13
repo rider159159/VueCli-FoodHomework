@@ -254,7 +254,6 @@ export default {
     }
   },
   created () {
-    console.log(this.$route.params.id)
     this.getProduct(this.$route.params.id)
     this.getData()
   }

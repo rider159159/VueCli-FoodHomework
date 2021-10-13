@@ -28,6 +28,10 @@
               <router-link to="/products" class="nav-link d-none d-lg-block">我們的餐點</router-link>
               <router-link to="/products" class="nav-link border-bottom d-lg-none">我們的餐點</router-link>
             </li>
+            <li class="nav-item custom__nav--hover" :class="{'active':navIndex === '1'}" @click="collapseHide('1')">
+              <router-link to="/about" class="nav-link d-none d-lg-block">關於我們</router-link>
+              <router-link to="/about" class="nav-link border-bottom d-lg-none">關於我們</router-link>
+            </li>
           </ul>
         </div>
       </div>
