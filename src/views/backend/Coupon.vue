@@ -295,39 +295,35 @@ export default {
       const vm = this
       vm.isLoading = true
       if (vm.temporary.id) {
-        vm.hexAPI.data.forEach((item) => {
-          if (vm.temporary.id === item.id) {
-            vm.temporary.deadline_at = vm.temporary.deadline.datetime
-            vm.axios
-              .patch(`${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/coupon/${vm.temporary.id}`, vm.temporary)
-              .then(() => {
-                vm.isLoading = false
-                vm.$swal({
-                  icon: 'success',
-                  title: '修改成功',
-                  showConfirmButton: false,
-                  timer: 1500
-                }).then((result) => {
-                  if (!result.value) {
-                    vm.getData()
-                  }
-                })
-              })
-              .catch((error) => {
-                vm.isLoading = false
-                vm.$swal({
-                  icon: 'error',
-                  title: '修改失敗',
-                  text: `${error.message}`,
-                  confirmButtonText: '確定'
-                }).then((result) => {
-                  if (result.value) {
-                    vm.getData()
-                  }
-                })
-              })
-          }
-        })
+        vm.temporary.deadline_at = vm.temporary.deadline.datetime
+        vm.axios
+          .patch(`${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/coupon/${vm.temporary.id}`, vm.temporary)
+          .then(() => {
+            vm.isLoading = false
+            vm.$swal({
+              icon: 'success',
+              title: '修改成功',
+              showConfirmButton: false,
+              timer: 1500
+            }).then((result) => {
+              if (!result.value) {
+                vm.getData()
+              }
+            })
+          })
+          .catch((error) => {
+            vm.isLoading = false
+            vm.$swal({
+              icon: 'error',
+              title: '修改失敗',
+              text: `${error.message}`,
+              confirmButtonText: '確定'
+            }).then((result) => {
+              if (result.value) {
+                vm.getData()
+              }
+            })
+          })
       } else {
         vm.addData()
       }

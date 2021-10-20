@@ -156,39 +156,35 @@ export default {
         paid = 'unpaid'
       }
       if (vm.temporary.id) {
-        vm.hexAPI.data.forEach((item) => {
-          if (vm.temporary.id === item.id) {
-            vm.axios
-              .patch(`${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/orders/${vm.temporary.id}/${paid}`, vm.temporary.id)
-              .then(() => {
-                vm.isLoading = false
-                vm.$swal({
-                  icon: 'success',
-                  title: '修改成功',
-                  showConfirmButton: false,
-                  timer: 1500
-                }).then((result) => {
-                  if (!result.value) {
-                    vm.getData()
-                    vm.temporary = {}
-                  }
-                })
-              })
-              .catch((error) => {
-                vm.isLoading = false
-                vm.$swal({
-                  icon: 'error',
-                  title: '修改失敗',
-                  text: `${error.message}`,
-                  confirmButtonText: '確定'
-                }).then((result) => {
-                  if (result.value) {
-                    vm.getData()
-                  }
-                })
-              })
-          }
-        })
+        vm.axios
+          .patch(`${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/orders/${vm.temporary.id}/${paid}`, vm.temporary.id)
+          .then(() => {
+            vm.isLoading = false
+            vm.$swal({
+              icon: 'success',
+              title: '修改成功',
+              showConfirmButton: false,
+              timer: 1500
+            }).then((result) => {
+              if (!result.value) {
+                vm.getData()
+                vm.temporary = {}
+              }
+            })
+          })
+          .catch((error) => {
+            vm.isLoading = false
+            vm.$swal({
+              icon: 'error',
+              title: '修改失敗',
+              text: `${error.message}`,
+              confirmButtonText: '確定'
+            }).then((result) => {
+              if (result.value) {
+                vm.getData()
+              }
+            })
+          })
       }
     }
   },

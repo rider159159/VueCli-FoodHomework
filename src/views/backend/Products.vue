@@ -2,7 +2,11 @@
   <section class="container">
     <loading :active.sync="isLoading">
       <template slot="default">
-        <img src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/lVFaRgYrO5dCfyEBJqB9Jz9OVpximp3hFlU1Wa1FxK0vEbkNMPzyoCR70gJhz7j3As6yvoJtJ3oceAGtWCv5rSTXleOyQqUed4vAYzX8e5ElrwIgukry35YQJVzDkdki.gif" alt="">
+        <div class="loadingio-spinner-rolling-zw2jail0s7">
+          <div class="ldio-ufznupyt3qm">
+            <div></div>
+          </div>
+        </div>
       </template>
     </loading>
     <h2 class="font-weight-bold my-5">產品列表 (後臺管理)</h2>
@@ -94,7 +98,7 @@
                       />
                     </blockquote>
                   </div>
-                  <img :src="viewImageSrc" alt class="img-fluid">
+                  <img :src="viewImageSrc" alt="商品圖片" class="img-fluid">
                 </div>
                 <div class="col-6">
                   <div class="form-group">
@@ -211,7 +215,7 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header bg-secondary">
-            <h5 class="modal-title text-danger">刪除商品</h5>
+            <h5 class="modal-title">刪除商品</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -343,6 +347,7 @@ export default {
           vm.isLoading = false
           if (action === 'edit') {
             $('#addProductModal').modal('show')
+            vm.viewImage(vm.temporary.imageUrl[0])
           } else {
             $('#deleteProductModal').modal('show')
           }
@@ -353,38 +358,34 @@ export default {
       const vm = this
       vm.isLoading = true
       if (vm.temporary.id) {
-        vm.hexAPI.data.forEach((item) => {
-          if (vm.temporary.id === item.id) {
-            vm.axios
-              .patch(`${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/product/${vm.temporary.id}`, vm.temporary)
-              .then(() => {
-                vm.isLoading = false
-                vm.$swal({
-                  icon: 'success',
-                  title: '修改成功',
-                  showConfirmButton: false,
-                  timer: 1500
-                }).then((result) => {
-                  if (!result.value) {
-                    vm.getData()
-                  }
-                })
-              })
-              .catch((error) => {
-                vm.isLoading = false
-                vm.$swal({
-                  icon: 'error',
-                  title: '修改失敗',
-                  text: `${error.message}`,
-                  confirmButtonText: '確定'
-                }).then((result) => {
-                  if (result.value) {
-                    vm.getData()
-                  }
-                })
-              })
-          }
-        })
+        vm.axios
+          .patch(`${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/product/${vm.temporary.id}`, vm.temporary)
+          .then(() => {
+            vm.isLoading = false
+            vm.$swal({
+              icon: 'success',
+              title: '修改成功',
+              showConfirmButton: false,
+              timer: 1500
+            }).then((result) => {
+              if (!result.value) {
+                vm.getData()
+              }
+            })
+          })
+          .catch((error) => {
+            vm.isLoading = false
+            vm.$swal({
+              icon: 'error',
+              title: '修改失敗',
+              text: `${error.message}`,
+              confirmButtonText: '確定'
+            }).then((result) => {
+              if (result.value) {
+                vm.getData()
+              }
+            })
+          })
       } else {
         vm.addData()
       }
@@ -394,38 +395,34 @@ export default {
     deleteData () {
       const vm = this
       vm.isLoading = true
-      vm.hexAPI.data.forEach((item) => {
-        if (vm.temporary.id === item.id) {
-          vm.axios
-            .delete(`${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/product/${vm.temporary.id}`)
-            .then(() => {
-              vm.isLoading = false
-              vm.$swal({
-                icon: 'success',
-                title: '刪除成功',
-                showConfirmButton: false,
-                timer: 1500
-              }).then((result) => {
-                if (!result.value) {
-                  vm.getData()
-                }
-              })
-            })
-            .catch((error) => {
-              vm.isLoading = false
-              vm.$swal({
-                icon: 'error',
-                title: '刪除失敗',
-                text: `${error.message}`,
-                confirmButtonText: '確定'
-              }).then((result) => {
-                if (result.value) {
-                  vm.getData()
-                }
-              })
-            })
-        }
-      })
+      vm.axios
+        .delete(`${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/product/${vm.temporary.id}`)
+        .then(() => {
+          vm.isLoading = false
+          vm.$swal({
+            icon: 'success',
+            title: '刪除成功',
+            showConfirmButton: false,
+            timer: 1500
+          }).then((result) => {
+            if (!result.value) {
+              vm.getData()
+            }
+          })
+        })
+        .catch((error) => {
+          vm.isLoading = false
+          vm.$swal({
+            icon: 'error',
+            title: '刪除失敗',
+            text: `${error.message}`,
+            confirmButtonText: '確定'
+          }).then((result) => {
+            if (result.value) {
+              vm.getData()
+            }
+          })
+        })
     },
     cleanData () {
       this.temporary = {
