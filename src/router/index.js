@@ -45,11 +45,14 @@ const routes = [
       },
       {
         path: 'order',
-        component: () => import('../views/backend/Order.vue')
+        component: () => import('../views/backend/Order.vue'),
+        meta: { requiresAuth: true }
       },
       {
         path: 'coupon',
-        component: () => import('../views/backend/Coupon.vue')
+        component: () => import('../views/backend/Coupon.vue'),
+        meta: { requiresAuth: true }
+
       }
     ]
   },

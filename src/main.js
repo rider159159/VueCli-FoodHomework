@@ -39,6 +39,22 @@ Vue.filter('commaFormat', function (value) {
   return 'NT. ' + parts.join('.')
 })
 
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth) {
+    const token = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, '$1')
+    const url = `${process.env.VUE_APP_APIPATH}auth/check`
+    axios.post(url, { api_token: token }).then(res => {
+      if (res.data.success) {
+        next()
+      } else {
+        next({ path: '/login' })
+      }
+    })
+  } else {
+    next({ path: '/login' })
+  }
+})
+
 new Vue({
   created () {
     AOS.init()

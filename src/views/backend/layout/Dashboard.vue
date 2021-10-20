@@ -57,7 +57,7 @@
       <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
           <div class="modal-header bg-primary">
-            <h5 class="modal-title">是否登出 ?</h5>
+            <h5 class="modal-title text-white">是否登出 ?</h5>
             <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -90,28 +90,14 @@ export default {
     }
   },
   methods: {
-    signout (e) {
+    signout () {
       document.cookie = 'hexToken=; expires=; path=/'
       this.$router.push('/')
-    },
-    checkToken () {
-      const vm = this
-      vm.token = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, '$1')
-      if (vm.token.api_token === '') {
-        vm.$router.push('/')
-      } else {
-        vm.axios.defaults.headers.common.Authorization = `Bearer ${vm.token}`
-        vm.axios
-          .post(`${process.env.VUE_APP_APIPATH}auth/check`, { api_token: vm.token })
-          .then((res) => {
-            vm.checkSucces = true
-          })
-          .catch(() => vm.$router.push('/'))
-      }
     }
   },
   created () {
     this.checkToken()
+    this.axios.defaults.headers.common.Authorization = `Bearer ${document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, '$1')}`
   }
 }
 </script>
