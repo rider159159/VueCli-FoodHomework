@@ -56,3 +56,10 @@ h1, h2, h3, h4{
 .transition{
   transition: 0.3s;
 }
+
+.bg-darkness {
+  background-color: #050505;
+}
+button:focus {
+  outline:none;
+}

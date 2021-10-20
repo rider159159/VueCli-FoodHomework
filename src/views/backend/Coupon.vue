@@ -205,7 +205,7 @@ export default {
   data () {
     return {
       hexAPI: {
-        data: {}
+        data: []
       },
       dateTimeline: '',
       coupon: {

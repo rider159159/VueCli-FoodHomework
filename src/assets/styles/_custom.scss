@@ -159,8 +159,8 @@
           position: absolute;
           content:'';
           bottom: 0;
-          right: 10px;
-          left: 10px;
+          right: 0px;
+          left: 0px;
           height: 2px;
           background-color:map-get($theme-colors, secondary);
         }
@@ -175,8 +175,8 @@
         right: 0px;
         left: 0px;
         @media (min-width: 996px){
-          right: 10px;
-          left: 10px;
+          right: 0px;
+          left: 0px;
         }
         height: 2px;
         background-color:map-get($theme-colors, secondary);

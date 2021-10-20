@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-white sticky-top transition" :class="{'py-0':isPadding}">
+    <nav id="nav" class="navbar navbar-expand-lg bg-darkness sticky-top transition" :class="{'py-0':isPadding}">
       <div class="container">
         <router-link to="/" class="navbar-brand text-primary">
-          <h1 class="h2 d-flex align-items-center mb-0" @click="collapseHide">
+          <h1 class="h2 text-white d-flex align-items-center mb-0" @click="collapseHide">
             <span class="material-icons-outlined material-icons mr-2 h1">
               rice_bowl
             </span>
@@ -19,18 +19,20 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="h2 text-white material-icons material-icons-outlined">
+          menu
+          </span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="custom__nav navbar-nav ml-auto">
             <li class="nav-item custom__nav--hover" :class="{'active':navIndex === '0'}" @click="collapseHide('0')">
-              <router-link to="/products" class="nav-link d-none d-lg-block">我們的餐點</router-link>
-              <router-link to="/products" class="nav-link border-bottom d-lg-none">我們的餐點</router-link>
+              <router-link to="/products" class="nav-link text-white d-none d-lg-block">我們的餐點</router-link>
+              <router-link to="/products" class="nav-link text-white border-bottom d-lg-none">我們的餐點</router-link>
             </li>
             <li class="nav-item custom__nav--hover" :class="{'active':navIndex === '1'}" @click="collapseHide('1')">
-              <router-link to="/about" class="nav-link d-none d-lg-block">關於我們</router-link>
-              <router-link to="/about" class="nav-link border-bottom d-lg-none">關於我們</router-link>
+              <router-link to="/about" class="nav-link text-white d-none d-lg-block">關於我們</router-link>
+              <router-link to="/about" class="nav-link text-white border-bottom d-lg-none">關於我們</router-link>
             </li>
           </ul>
         </div>
