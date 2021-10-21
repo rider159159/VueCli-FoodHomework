@@ -43,7 +43,7 @@
         </div>
       </div>
     </nav>
-    <router-view v-if="checkSucces" />
+    <router-view />
 
     <!-- signout Modal -->
     <div
@@ -96,7 +96,6 @@ export default {
     }
   },
   created () {
-    this.checkToken()
     this.axios.defaults.headers.common.Authorization = `Bearer ${document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, '$1')}`
   }
 }
