@@ -5,6 +5,16 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/test',
+    component: () => import('../views/elementBack/layout/Layout.vue'),
+    children: [
+      {
+        path: '/',
+        component: () => import('../views/elementBack/Product.vue')
+      }
+    ]
+  },
+  {
     path: '/',
     component: () => import('../views/frontend/layout/Layout.vue'),
     children: [

@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import 'bootstrap'
 import './assets/styles/main.scss'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 /* 套件 */
 // axios，AJAX套件
 import axios from 'axios'
@@ -25,6 +27,7 @@ Vue.config.productionTip = false
 Vue.use(VueAxios, axios)
 
 Vue.use(Validate)
+Vue.use(ElementUI)
 
 Vue.component('loading', Loading)
 
