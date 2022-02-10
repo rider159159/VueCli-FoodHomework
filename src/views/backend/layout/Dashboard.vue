@@ -34,9 +34,6 @@
               <router-link to="/admin/coupon" class="nav-link">優惠券管理</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/admin/storages" class="nav-link">檔案管理</router-link>
-            </li>
-            <li class="nav-item">
               <a href="" class="nav-link" data-toggle="modal" data-target="#signoutModal">Signout</a>
             </li>
           </ul>

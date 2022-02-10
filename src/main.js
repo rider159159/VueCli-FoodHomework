@@ -49,11 +49,17 @@ router.beforeEach((to, from, next) => {
       } else {
         next({ path: '/login' })
       }
+    }).catch((error) => {
+      // 由於 API 有錯誤沒 TOKEN 不會回傳，所以採用只方式判斷
+      if (error.response.status === 422) {
+        next({ path: '/login' })
+      }
     })
   } else {
     next()
   }
 })
+
 
 new Vue({
   created () {
