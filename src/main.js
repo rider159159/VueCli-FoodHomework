@@ -60,7 +60,6 @@ router.beforeEach((to, from, next) => {
   }
 })
 
-
 new Vue({
   created () {
     AOS.init()
